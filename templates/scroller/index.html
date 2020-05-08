@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static "css/hipStyle.css" %}">
+    <title>Welcome to HipHopper.io</title>
+</head>
+<body>
+<h1>Welcome to HipHopper.io!</h1>
+{% for video in videos %}
+    <span>{{ video.title }} by {{ video.artist }}:</span>
+    <video>
+        <source src="media/{{ video.video }}" type="video/mp4">
+        Does not work in this old browser!
+    </video>
+{% endfor %}
+</body>
+</html>
